@@ -139,12 +139,12 @@ const About = () => {
               Firebase, and the MERN stack to turn ideas into clean, functional web apps.
             </p>
             <p>
-              My journey started with curiosity (and a lot of trial and error). Since then, I’ve built everything from task managers to 
+              My journey started with curiosity (and a lot of trial and error). Since then, I've built everything from task managers to 
               safety-focused travel apps, constantly learning and refining my skills along the way.
             </p>
             <p>
-              When I'm not coding, I’m probably at a hackathon, fixing a bug that mysteriously disappeared, or automating something just for 
-              fun. I’m always excited to join teams where I can grow, build, and maybe deploy without breaking things (on the first try).
+              When I'm not coding, I'm probably at a hackathon, fixing a bug that mysteriously disappeared, or automating something just for 
+              fun. I'm always excited to join teams where I can grow, build, and maybe deploy without breaking things (on the first try).
             </p>
           </div>
         </StyledText>
@@ -153,7 +153,7 @@ const About = () => {
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/me.png"
+              src="../../images/me.PNG"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}
