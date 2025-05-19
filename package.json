@@ -2,13 +2,13 @@
   "name": "v4",
   "description": "Personal Website V4",
   "version": "1.0.0",
-  "author": "Brittany Chiang <brittany.chiang@gmail.com>",
+  "author": "Keerthan K Acharya",
   "resolutions": {
     "**/graphql": "16.6.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bchiang7/v4"
+    "url": "https://github.com/keerthankacharya/Portfolio"
   },
   "keywords": [
     "gatsby"
@@ -16,7 +16,6 @@
   "license": "MIT",
   "browserslist": "> 0.25%, not dead",
   "scripts": {
-    "preinstall": "npx npm-force-resolutions",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
