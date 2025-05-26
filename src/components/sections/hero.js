@@ -72,14 +72,16 @@ const Hero = () => {
     </>
   );
   const five = (
-    <a
-      className="email-link"
-      href="https://drive.google.com/file/d/1pP9-0szCnNr81wQLoIzC-x9BuyqtxKRf/view?usp=sharing"
-      target="_blank"
-      rel="noreferrer">
-      Resume
-    </a>
-  );
+  <a
+    className="email-link"
+    href="/Keerthan_K_Acharya.pdf"
+    target="_blank"
+    rel="noreferrer"
+  >
+    Resume
+  </a>
+);
+
 
   const items = [one, two, three, four, five];
 
