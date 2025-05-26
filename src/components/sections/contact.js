@@ -178,7 +178,7 @@ const Contact = () => {
       if (result.success) {
         setSubmitStatus({
           type: 'success',
-          message: 'Thank you for your message! I will get back to you soon.'
+          message: '✅ Message Sent! Thanks for getting in touch! Your message is now on its way — probably hitching a ride on a Wi-Fi signal.📡 I’ll reply soon (unless I’m debugging… then I’ll reply slightly later 😅).'
         });
         // Reset form
         setFormData({
