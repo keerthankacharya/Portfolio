@@ -3,6 +3,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
+import resume from '../../images/Keerthan_K_Acharya.pdf';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -74,7 +75,7 @@ const Hero = () => {
   const five = (
   <a
     className="email-link"
-    href="/Keerthan_K_Acharya.pdf"
+    href={resume}
     target="_blank"
     rel="noreferrer"
   >
