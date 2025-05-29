@@ -7,7 +7,7 @@ module.exports = {
       'Keerthan K Acharya is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
     siteUrl: 'https://ak-keerthan.vercel.app', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@bchiang7',
+    twitterUsername: '@ak_keerthan',
     googleSiteVerification: '9KaR88072bjKmb71cAkDO2f31IZCTblcQDX200Cv9EI',
   },
   plugins: [
