@@ -6,7 +6,8 @@
 
 import React from 'react';
 
-export const onRenderBody = ({ setHeadComponents }) => {
+export const onRenderBody = ({ setHeadComponents, setHtmlAttributes }) => {
+  setHtmlAttributes({ lang: 'en-US' });
   setHeadComponents([
     <meta
       key="google-site-verification"
