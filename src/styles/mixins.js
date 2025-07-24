@@ -90,19 +90,22 @@ const mixins = {
     color: var(--green);
     background-color: transparent;
     border: 1px solid var(--green);
-    border-radius: var(--border-radius);
+    border-radius: 8px;
     padding: 0.75rem 1rem;
     font-size: var(--fz-xs);
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
+    font-weight: 500;
     line-height: 1;
     text-decoration: none;
-    transition: var(--transition);
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover,
     &:focus-visible {
       outline: none;
-      box-shadow: 3px 3px 0 0 var(--green);
-      transform: translate(-4px, -4px);
+      background-color: rgba(100, 255, 218, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(100, 255, 218, 0.2);
     }
     &:after {
       display: none !important;

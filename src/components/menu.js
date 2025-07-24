@@ -27,9 +27,12 @@ const StyledHamburgerButton = styled.button`
     background-color: transparent;
     color: inherit;
     text-transform: none;
-    transition-timing-function: linear;
-    transition-duration: 0.15s;
-    transition-property: opacity, filter;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      background-color: rgba(100, 255, 218, 0.05);
+    }
   }
 
   .ham-box {
@@ -47,13 +50,8 @@ const StyledHamburgerButton = styled.button`
     height: 2px;
     border-radius: var(--border-radius);
     background-color: var(--green);
-    transition-duration: 0.22s;
-    transition-property: transform;
-    transition-delay: ${props => (props.menuOpen ? `0.12s` : `0s`)};
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform: rotate(${props => (props.menuOpen ? `225deg` : `0deg`)});
-    transition-timing-function: cubic-bezier(
-      ${props => (props.menuOpen ? `0.215, 0.61, 0.355, 1` : `0.55, 0.055, 0.675, 0.19`)}
-    );
     &:before,
     &:after {
       content: '';
@@ -65,22 +63,19 @@ const StyledHamburgerButton = styled.button`
       height: 2px;
       border-radius: 4px;
       background-color: var(--green);
-      transition-timing-function: ease;
-      transition-duration: 0.15s;
-      transition-property: transform;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     &:before {
       width: ${props => (props.menuOpen ? `100%` : `120%`)};
       top: ${props => (props.menuOpen ? `0` : `-10px`)};
       opacity: ${props => (props.menuOpen ? 0 : 1)};
-      transition: ${({ menuOpen }) =>
-    menuOpen ? 'var(--ham-before-active)' : 'var(--ham-before)'};
+
     }
     &:after {
       width: ${props => (props.menuOpen ? `100%` : `80%`)};
       bottom: ${props => (props.menuOpen ? `0` : `-10px`)};
       transform: rotate(${props => (props.menuOpen ? `-90deg` : `0`)});
-      transition: ${({ menuOpen }) => (menuOpen ? 'var(--ham-after-active)' : 'var(--ham-after)')};
+
     }
   }
 `;
@@ -94,16 +89,18 @@ const StyledSidebar = styled.aside`
     top: 0;
     bottom: 0;
     right: 0;
-    padding: 50px 10px;
+    padding: 50px 20px;
     width: min(75vw, 400px);
     height: 100vh;
     outline: 0;
-    background-color: var(--light-navy);
-    box-shadow: -10px 0px 30px -15px var(--navy-shadow);
+    background-color: rgba(17, 34, 64, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: -10px 0px 40px -15px rgba(2, 12, 27, 0.8);
     z-index: 9;
     transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
     visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};
-    transition: var(--transition);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   nav {
@@ -111,7 +108,7 @@ const StyledSidebar = styled.aside`
     width: 100%;
     flex-direction: column;
     color: var(--lightest-slate);
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     text-align: center;
   }
 
@@ -123,27 +120,30 @@ const StyledSidebar = styled.aside`
 
     li {
       position: relative;
-      margin: 0 auto 20px;
-      counter-increment: item 1;
-      font-size: clamp(var(--fz-sm), 4vw, var(--fz-lg));
+      margin: 0 auto 24px;
+      font-size: clamp(var(--fz-md), 4vw, var(--fz-xl));
+      font-weight: 500;
 
       @media (max-width: 600px) {
-        margin: 0 auto 10px;
-      }
-
-      &:before {
-        content: '0' counter(item) '.';
-        display: block;
-        margin-bottom: 5px;
-        color: var(--green);
-        font-size: var(--fz-sm);
+        margin: 0 auto 20px;
       }
     }
 
     a {
       ${({ theme }) => theme.mixins.link};
       width: 100%;
-      padding: 3px 20px 20px;
+      padding: 16px 24px;
+      border-radius: 8px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: var(--font-sans);
+      letter-spacing: 0.5px;
+
+      &:hover,
+      &:focus {
+        background-color: rgba(100, 255, 218, 0.05);
+        color: var(--green);
+        transform: translateX(4px);
+      }
     }
   }
 `;

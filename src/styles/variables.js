@@ -2,10 +2,10 @@ import { css } from 'styled-components';
 
 const variables = css`
   :root {
-    --dark-navy: #020c1b;
-    --navy: #0a192f;
-    --light-navy: #112240;
-    --lightest-navy: #233554;
+    --dark-navy: #000000;
+    --navy: #111111;
+    --light-navy: #1a1a1a;
+    --lightest-navy: #2a2a2a;
     --navy-shadow: rgba(2, 12, 27, 0.7);
     --dark-slate: #495670;
     --slate: #8892b0;
@@ -30,15 +30,15 @@ const variables = css`
     --fz-xxl: 22px;
     --fz-heading: 32px;
 
-    --border-radius: 4px;
+    --border-radius: 8px;
     --nav-height: 100px;
-    --nav-scroll-height: 70px;
+    --nav-scroll-height: 80px;
 
     --tab-height: 42px;
     --tab-width: 120px;
 
-    --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
-    --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    --easing: cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --hamburger-width: 30px;
 

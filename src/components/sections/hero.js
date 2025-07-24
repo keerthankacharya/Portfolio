@@ -12,10 +12,23 @@ const StyledHeroSection = styled.section`
   min-height: 100vh;
   height: 100vh;
   padding: 0;
+  padding-top: calc(var(--nav-height) + 5px);
+
+  @media (max-width: 1080px) {
+    padding-top: calc(var(--nav-height) + 5px);
+  }
+
+  @media (max-width: 768px) {
+    padding-top: calc(var(--nav-height) + 5px);
+  }
+
+  @media (max-width: 480px) {
+    padding-top: calc(var(--nav-height) + 5px);
+  }
 
   @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) {
     height: auto;
-    padding-top: var(--nav-height);
+    padding-top: calc(var(--nav-height) + 5px);
   }
 
   h1 {
@@ -39,6 +52,7 @@ const StyledHeroSection = styled.section`
   p {
     margin: 20px 0 0;
     max-width: 540px;
+    text-align: justify;
   }
 
   .email-link {
@@ -66,9 +80,10 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I'm a passionate web developer with a focus on building responsive and user-friendly applications.
-        Skilled in React, TypeScript, Firebase, and the MERN stack, I enjoy turning ideas into real-world solutions.
-        Currently seeking opportunities to contribute to impactful projects and grow as a developer.
+        Results-driven Software Development Engineer and Full-Stack Developer with a proven ability to architect
+        and deliver scalable applications. Experienced in building systems using React and Node.js with REST APIs,
+        RBAC systems, and real-time features. Passionate about clean code, system design, and solving real-world
+        problems. Seeking an opportunity to apply skills, contribute to growth, and foster my professional development.
       </p>
     </>
   );

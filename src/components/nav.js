@@ -14,21 +14,26 @@ const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   z-index: 11;
-  padding: 0px 50px;
+  padding: 0px 60px;
   width: 100%;
   height: var(--nav-height);
-  background-color: rgba(10, 25, 47, 0.85);
+  background-color: var(--navy);
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
-  backdrop-filter: blur(10px);
-  transition: var(--transition);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px -8px rgba(2, 12, 27, 0.4);
 
   @media (max-width: 1080px) {
-    padding: 0 40px;
+    padding: 0 50px;
   }
   @media (max-width: 768px) {
-    padding: 0 25px;
+    padding: 0 30px;
+  }
+  @media (max-width: 480px) {
+    padding: 0 20px;
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -38,8 +43,10 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
-        background-color: rgba(10, 25, 47, 0.85);
-        box-shadow: 0 10px 30px -10px var(--navy-shadow);
+        background-color: var(--navy);
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
+        box-shadow: 0 8px 32px -12px rgba(2, 12, 27, 0.6);
       `};
 
     ${props =>
@@ -48,7 +55,7 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(calc(var(--nav-scroll-height) * -1));
-        box-shadow: 0 10px 30px -10px var(--navy-shadow);
+        box-shadow: 0 8px 32px -12px rgba(2, 12, 27, 0.6);
       `};
   }
 `;
@@ -58,8 +65,8 @@ const StyledNav = styled.nav`
   position: relative;
   width: 100%;
   color: var(--lightest-slate);
-  font-family: var(--font-mono);
-  counter-reset: item 0;
+  font-family: var(--font-sans);
+  isolation: isolate;
   z-index: 12;
 
   .logo {
@@ -67,18 +74,21 @@ const StyledNav = styled.nav`
 
     a {
       color: var(--green);
-      width: 42px;
-      height: 42px;
+      width: 52px;
+      height: 52px;
       position: relative;
       z-index: 1;
+      border-radius: 12px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
       .hex-container {
         position: absolute;
         top: 0;
         left: 0;
         z-index: -1;
+        opacity: 0.9;
         @media (prefers-reduced-motion: no-preference) {
-          transition: var(--transition);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
       }
 
@@ -89,7 +99,7 @@ const StyledNav = styled.nav`
           fill: none;
           user-select: none;
           @media (prefers-reduced-motion: no-preference) {
-            transition: var(--transition);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           }
           polygon {
             fill: var(--navy);
@@ -100,9 +110,13 @@ const StyledNav = styled.nav`
       &:hover,
       &:focus {
         outline: 0;
-        transform: translate(-4px, -4px);
+        transform: translateY(-3px);
         .hex-container {
-          transform: translate(4px, 3px);
+          opacity: 1;
+          transform: scale(1.08);
+        }
+        .logo-container {
+          transform: scale(1.08);
         }
       }
     }
@@ -122,26 +136,144 @@ const StyledLinks = styled.div`
     padding: 0;
     margin: 0;
     list-style: none;
+    gap: 4px;
 
     li {
-      margin: 0 5px;
       position: relative;
-      counter-increment: item 1;
-      font-size: var(--fz-xs);
+      font-size: var(--fz-sm);
+      font-weight: 500;
+      isolation: isolate;
+
+      &::before {
+        content: counter(nav-counter, decimal-leading-zero);
+        counter-increment: nav-counter;
+        position: absolute;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: var(--font-mono);
+        font-size: 10px;
+        color: var(--green);
+        opacity: 0;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        font-weight: 400;
+        z-index: 10;
+        background: linear-gradient(
+          135deg,
+          rgba(10, 25, 47, 0.95) 0%,
+          rgba(17, 34, 64, 0.9) 50%,
+          rgba(10, 25, 47, 0.95) 100%
+        );
+        padding: 2px 6px;
+        border-radius: 4px;
+        border: 1px solid rgba(100, 255, 218, 0.3);
+        pointer-events: none;
+      }
+
+      /* Number hover effect - only for the specific li being hovered */
+      &:hover::before {
+        opacity: 1 !important;
+        transform: translateX(-50%) translateY(-2px) !important;
+      }
 
       a {
-        padding: 10px;
+        display: inline-block;
+        padding: 14px 24px;
+        color: var(--lightest-slate);
+        text-decoration: none;
+        border-radius: 12px;
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        font-family: var(--font-sans);
+        letter-spacing: 0.8px;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 13px;
+        background: transparent;
+        border: 1px solid transparent;
+        overflow: hidden;
+        z-index: 1;
 
-        &:before {
-          content: '0' counter(item) '.';
-          margin-right: 5px;
-          color: var(--green);
-          font-size: var(--fz-xxs);
-          text-align: right;
+        /* Reset any inherited styles */
+        &::before,
+        &::after {
+          content: none;
         }
+
+        /* Shimmer effect */
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(100, 255, 218, 0.1), transparent);
+          transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          z-index: -1;
+        }
+      }
+
+      /* Hover state - only affects the specific link being hovered */
+      a:hover {
+        color: var(--green) !important;
+        background: linear-gradient(135deg, rgba(100, 255, 218, 0.08), rgba(100, 255, 218, 0.03)) !important;
+        border: 1px solid rgba(100, 255, 218, 0.15) !important;
+        border-top: 1px solid transparent !important;
+        transform: translateY(-2px) !important;
+        outline: none !important;
+        box-shadow: 0 6px 20px -6px rgba(100, 255, 218, 0.2) !important;
+      }
+
+      /* Shimmer animation on hover */
+      a:hover::before {
+        left: 100% !important;
+      }
+
+      /* Top border effect on hover */
+      a:hover::after {
+        content: '' !important;
+        position: absolute !important;
+        top: -1px !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 1px !important;
+        background: linear-gradient(
+          to right,
+          rgba(100, 255, 218, 0.15) 0%,
+          rgba(100, 255, 218, 0.15) 40%,
+          transparent 45%,
+          transparent 55%,
+          rgba(100, 255, 218, 0.15) 60%,
+          rgba(100, 255, 218, 0.15) 100%
+        ) !important;
+        z-index: 2 !important;
+      }
+
+      /* Focus state */
+      a:focus {
+        color: var(--green) !important;
+        background: linear-gradient(135deg, rgba(100, 255, 218, 0.08), rgba(100, 255, 218, 0.03)) !important;
+        border: 1px solid rgba(100, 255, 218, 0.15) !important;
+        border-top: 1px solid transparent !important;
+        transform: translateY(-2px) !important;
+        outline: none !important;
+        box-shadow: 0 6px 20px -6px rgba(100, 255, 218, 0.2) !important;
+      }
+
+      a:focus::before {
+        left: 100% !important;
+      }
+
+      /* Active state */
+      a:active {
+        transform: translateY(-1px) !important;
       }
     }
   }
+
+  /* Counter reset for navigation numbering */
+  counter-reset: nav-counter;
 `;
 
 const Nav = ({ isHome }) => {
@@ -244,14 +376,7 @@ const Nav = ({ isHome }) => {
                 </TransitionGroup>
               </ol>
 
-              <TransitionGroup component={null}>
-                {isMounted && (
-                  <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-                    <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
-                    </div>
-                  </CSSTransition>
-                )}
-              </TransitionGroup>
+
             </StyledLinks>
 
             <TransitionGroup component={null}>
