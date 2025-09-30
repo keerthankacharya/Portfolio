@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import react, { useState, useEffect, useRef } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
