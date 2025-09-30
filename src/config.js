@@ -17,7 +17,7 @@ module.exports = {
     {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/keerthan-k-acharya',
-    }
+    },
   ],
 
   navLinks: [
@@ -32,6 +32,10 @@ module.exports = {
     {
       name: 'Work',
       url: '/#projects',
+    },
+    {
+      name: 'Certifications',
+      url: '/#certifications',
     },
     {
       name: 'Contact',
