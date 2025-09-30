@@ -1,5 +1,5 @@
 ---
-date: '2'
+date: '1'
 title: 'SGPA Calculator'
 github: 'https://github.com/keerthankacharya/SGPA-Calculator'
 external: 'https://keerthankacharya.github.io/SGPA-Calculator/'
