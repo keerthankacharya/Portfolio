@@ -1,5 +1,5 @@
 ---
-date: '3'
+date: '2'
 title: 'SMS & Email Spam Detection'
 github: 'https://github.com/keerthankacharya/SMS-and-Email-Spam-Detection'
 external: 'https://github.com/keerthankacharya/SMS-and-Email-Spam-Detection'

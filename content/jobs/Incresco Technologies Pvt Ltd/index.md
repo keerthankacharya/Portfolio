@@ -1,12 +1,12 @@
 ---
 date: '30-06-2025'
-title: 'Software Engineer Intern'
+title: 'Software Engineer (Intern)'
 company: 'Incresco Technology'
 location: 'Bengaluru, India'
 range: 'June 2025 - Present'
 url: 'https://www.increscotech.com'
 ---
 
-- Developed a hotel and travel platform for a European brand with 100+ properties, supporting bookings, concierge, implementing real-time room inventory management and dynamic pricing engine with seasonal rates.
-- Built enterprise RBAC system and admin dashboards with 25+ permission types, featuring Material-UI components, Excel import/export capabilities, and Google Analytics and Whatsapp API integration.
-- Engineered modular e-commerce system using Medusa.js framework with 15+ custom modules, Redis caching, and AWS S3 storage for 1000+ digital assets with integrated Razorpay/Stripe payment processing.
+- Developed a Medusa.js + PostgreSQL inventory platform replacing Powderbyrne’s Salesforce; implemented supplier, concierge, pricing and led ETL to migrate 28,000+ records with 0% data loss and data validation.
+- Integrated an AI-powered chatbot integrated with Medusa, enabling queries across 200+ e-commerce tables, generating SQL queries, and producing graphs for statistical comparisons using GPT-4 and FastAPI.
+- Architected a Pub/Sub activity logger capturing 100% of booking events/state changes, powering a instant concierge timeline UI; cut investigation time by 70% and improved incident-resolution rate to 93%.
